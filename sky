@@ -1,0 +1,104 @@
+#import turtle library, math and random
+import turtle
+import math
+import random
+
+# function to set up turtle environment
+def environment():
+    #set up turtle environment
+    screen = turtle.Screen()
+    screen.setup(width= 800, height = 800)
+    screen.bgcolor('skyblue')
+
+def draw_cloud_arc(radius, angle):
+    turtle.circle(radius, angle)
+    turtle.right(180 - angle)
+
+def draw_cloud(x, y, size):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+
+    turtle.fillcolor('white')
+    turtle.begin_fill()
+
+    for _ in range(3):
+        draw_cloud_arc(size, 180)
+        turtle.left(90)
+    
+    turtle.end_fill()
+
+def draw_background():
+    pen = turtle.Turtle()
+    pen.speed(0) # set the drawing speed to maxium
+
+    # draw the sun
+    pen.penup()
+    pen.goto(-200, 200) # position the sun
+    pen.pendown()
+    pen.begin_fill()
+    pen.color("yellow")
+    pen.circle(50) # drawing the sun
+    pen.end_fill()
+
+    # draw the sun rays using a loop
+    pen.penup()
+    pen.goto(-200, 250)
+    pen.pendown()
+    pen.color("yellow")
+    # for loop to draw 12 sun rays
+    for _ in range(12):
+        pen.forward(70)
+        pen.backward(70)
+        pen.left(30)
+    # end for
+    
+    
+
+
+    # draw bird using nested loop
+    pen.penup()
+    pen.goto(-300, 100)
+    pen.pendown()
+    pen.color("black") # draw two birds
+    # for loop for the birds
+    for _ in range(2):
+        for _ in range(2): # draw 2 wings for each bird 
+            pen.forward(20)
+            pen.left(60)
+            pen.forward(40)
+            pen.left(120)
+            pen.forward(40)
+            pen.left(60)
+            pen.forward(20)
+            pen.left(180)
+        #end for loop
+        pen.penup()
+        pen.goto(pen.xcor() + 100, pen.ycor())
+        pen.pendown()
+    # end for loop
+    pen.hideturtle()
+    turtle.done()
+
+
+def draw_house():
+
+    return draw_house()
+
+def draw_windows_and_door():
+
+    return draw_windows_and_door()
+
+# main funciton to call the functions
+def main():
+    # draw sky
+    environment()
+    # draw background
+    draw_background()
+    # draw cloud
+    draw_cloud(200, 200, 50)
+    
+
+
+if __name__ == "__main__":
+    main()
