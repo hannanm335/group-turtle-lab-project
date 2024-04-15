@@ -1,0 +1,135 @@
+#import turtle library
+import turtle
+import math
+import random
+
+
+
+# function to set up turtle environment
+def environment():
+    #set up turtle environment
+    screen = turtle.Screen()
+    screen.setup(width= 800, height = 800)
+    screen.bgcolor('skyblue')
+
+def draw_background():
+    pen = turtle.Turtle()
+    pen.speed(0) # set the drawing speed to maxium
+
+    # draw the sun
+    pen.penup()
+    pen.goto(-200, 200) # position the sun
+    pen.pendown()
+    pen.begin_fill()
+    pen.color("yellow")
+    pen.circle(50) # drawing the sun
+    pen.end_fill()
+
+    # draw the sun rays using a loop
+    pen.penup()
+    pen.goto(-50, 50)
+    pen.pendown()
+    pen.color("yellow")
+    # for loop to draw 12 sun rays
+    for _ in range(12):
+        pen.forward(70)
+        pen.backward(70)
+        pen.left(30)
+    # end for
+
+def draw_roof():
+    #setting turtle variables
+    pen = turtle.Turtle()
+    pen.speed(1)
+    pen.penup()
+    pen.goto(-350, -200)
+    pen.pendown()
+    pen.color('black','brown') 
+    pen.begin_fill()
+    #for loop to draw the front roof triangle
+    for i in range(3):
+        pen.forward(100)
+        pen.left(120)
+    pen.end_fill() 
+    #draw side portion of the roof
+    pen.begin_fill()
+    pen.forward(450)
+    pen.left(120)
+    pen.forward(100)
+    pen.left(60)
+    pen.forward(350)
+    pen.end_fill()
+    pen.hideturtle()
+    
+def draw_roof_trimming():
+    #setting turtle variables
+    pen = turtle.Turtle()
+    pen.speed(1)
+    pen.color('black') 
+    pen.penup()
+    pen.goto(-350, -200)
+    pen.pensize(4)
+    pen.pendown()
+    #for loop to complete the front roof angle trimming
+    for i in range(3):
+        pen.forward(100)
+        pen.left(120)
+    #complete side roof portion trimming 
+    pen.forward(450)
+    pen.left(120)
+    pen.forward(100)
+    pen.left(60)
+    pen.forward(350)
+    pen.hideturtle()
+    
+def draw_chimney():
+    #settings variables
+    pen = turtle.Turtle()
+    pen.speed(1)
+    pen.penup()
+    pen.goto(-10, -65)
+    pen.pendown()
+    pen.color('black','brown') 
+    pen.begin_fill()
+    #for loop to draw chimney
+    for i in range(2):
+        pen.forward(40)
+        pen.right(90)
+        pen.forward(80)
+        pen.right(90)
+    pen.end_fill()
+    pen.hideturtle()
+
+def draw_chimney_trimming():
+    #settings variables
+    pen = turtle.Turtle()
+    pen.speed(1)
+    pen.color('black') 
+    pen.penup()
+    pen.goto(-10, -65)
+    pen.pensize(4)
+    pen.pendown()
+    #for loop to complete chimney trimming 
+    for i in range(2):
+        pen.forward(40)
+        pen.right(90)
+        pen.forward(80)
+        pen.right(90)
+    pen.hideturtle()    
+
+# main funciton to call the functions
+def main():
+    # draw sky
+    environment()
+    # draw backgroung
+    draw_background()
+    #draw roof elements
+    draw_roof()
+    draw_roof_trimming()
+    draw_chimney()
+    draw_chimney_trimming()
+    
+    
+
+if __name__ == "__main__":
+    main()
