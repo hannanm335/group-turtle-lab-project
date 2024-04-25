@@ -138,9 +138,10 @@ def draw_rain():
 def draw_grass():
     turtle.penup()
     turtle.begin_fill()
-    turtle.goto(-400, -100)
+    turtle.goto(-410, -230)
     turtle.pendown()
     for i in range(0, 2):
+        turtle.speed(0)
         turtle.fillcolor("green")
         turtle.forward(800)
         turtle.right(90)
@@ -151,14 +152,16 @@ def draw_grass():
 #Create a function for basic house construction
 def draw_red_house():
     turtle.penup()
-    turtle.goto(-250, -275)
+    turtle.goto(-350, -25)
     turtle.begin_fill()
-    for i in range(0, 4):
+    for i in range(0, 2):
         turtle.fillcolor("red")
         turtle.penup()
         turtle.pendown()
-        turtle.forward(250)
-        turtle.left(90)
+        turtle.forward(450)
+        turtle.right(90)
+        turtle.forward(200)
+        turtle.right(90)
     turtle.end_fill()
 
 
