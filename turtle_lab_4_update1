@@ -27,7 +27,7 @@ def draw_background():
 
     # draw the sun rays using a loop
     pen.penup()
-    pen.goto(-50, 50)
+    pen.goto(-200, 250)
     pen.pendown()
     pen.color("yellow")
     # for loop to draw 12 sun rays
